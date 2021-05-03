@@ -1,4 +1,1 @@
-console.log('this 
-is fast-react');
-
-break more struff
+console.log('this is fast-react');
