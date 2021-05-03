@@ -4,5 +4,5 @@ fast-react is a react CLI tool that allows users to quickly spin up react projec
 
 ## Wiki
 
-If you are interested in contributing please see our [Wiki](https://github.com/AlexGaiser/fast-react/wiki/Setting-up-for-Development) for useful information!
+If you are interested in contributing please see our [Wiki](https://github.com/AlexGaiser/fast-react/wiki/Setting-up-for-Development)!
 
