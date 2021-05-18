@@ -1,4 +1,4 @@
-export const clone = (target, map = new WeakMap()) => {
+export const clone = (target: any, map: any = new WeakMap()): any => {
   if (typeof target === 'object') {
     const cloneTarget = Array.isArray(target) ? [] : {};
     if (map.get(target)) {
