@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "declaration": true,
+    "composite": true,
+    "moduleResolution": "node",
+    "outDir":"build",
+    "downlevelIteration": true,
+    "jsx": "react",
+    "lib": [
+      "ES2020",
+      "DOM",
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["*.test.ts"]
+}
