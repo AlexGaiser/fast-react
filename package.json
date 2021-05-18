@@ -2,11 +2,11 @@
   "name": "fast-react",
   "version": "0.0.1",
   "description": "A CLI tool for creating lightweight React apps",
-  "main": "build/lib/cli.js",
+  "main": "build/src/cli.js",
   "scripts": {
     "test": "jest --coverage",
     "ci:lint": "eslint . -c .eslintrc.json",
-    "start": "tsc && node ./dist/lib/cli.js",
+    "start": "tsc && node ./build/src/cli.js",
     "build": "tsc && npm link"
   },
   "files": [
@@ -17,8 +17,8 @@
     "url": "git+https://github.com/AlexGaiser/fast-react.git"
   },
   "bin": {
-    "fast-react": "build/lib/cli.js",
-    "fr": "build/lib/cli.js"
+    "fast-react": "build/src/cli.js",
+    "fr": "build/src/cli.js"
   },
   "keywords": [
     "react",
