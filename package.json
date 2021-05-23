@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/AlexGaiser/fast-react#readme",
   "devDependencies": {
+    "@types/yargs": "^16.0.2",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.25.0",
