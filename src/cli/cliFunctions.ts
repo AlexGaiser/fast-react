@@ -23,3 +23,23 @@ export const envExecutable: any = (param: Environment) => {
   const message = `Type: ${param}`;
   console.log(message);
 };
+
+export const typescriptExecutable: any = () => {
+  console.log('TypeScript Executable triggered');
+};
+
+export const nameExecutable: any = () => {
+  console.log('Name Executable triggered');
+};
+
+export const eslintExecutable: any = () => {
+  console.log('Eslint Executable triggered');
+};
+
+export const prettierExecutable: any = () => {
+  console.log('Prettier Executable triggered');
+};
+
+export const templateExecutable: any = () => {
+  console.log('Template Executable triggered');
+};

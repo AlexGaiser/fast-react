@@ -3,6 +3,11 @@ import {
   jestExecutable,
   paramExecutable,
   envExecutable,
+  templateExecutable,
+  prettierExecutable,
+  typescriptExecutable,
+  nameExecutable,
+  eslintExecutable,
 } from './cliFunctions';
 
 // To add support for a CLI Arg:
@@ -17,8 +22,20 @@ const environments: ReadonlyArray<Environment> = [
   'production',
 ];
 
+type TemplateName = 'template 1' | 'template 2' | 'template 3';
+const templateNames: ReadonlyArray<TemplateName> = [
+  'template 1',
+  'template 2',
+  'template 3',
+];
+
 // Defines the accepted CLI commands, and their options
 const cliOptions: Record<string, unknown> = {
+  typescript: {
+    type: 'boolean',
+    alias: 'TypeScript?',
+    default: false,
+  },
   scss: {
     type: 'boolean',
     alias: 'Include SCSS?',
@@ -29,29 +46,53 @@ const cliOptions: Record<string, unknown> = {
     alias: 'Include Jest?',
     default: false,
   },
-  param: {
+  name: {
     type: 'string',
-    alias: 'Test arg takes param',
-    demandOption: true,
+    alias: 'Author',
+  },
+  eslint: {
+    type: 'boolean',
+    alias: 'Include eslint?',
+    default: false,
+  },
+  prettier: {
+    type: 'boolean',
+    alias: 'Include prettier?',
+    default: false,
+  },
+  template: {
+    choices: templateNames,
+    demandOptions: true,
+    describe: 'Select a Template',
+    default: templateNames[0],
   },
   env: {
     choices: environments,
     demandOptions: true,
     describe: 'Environment Type',
   },
+  param: {
+    type: 'string',
+    alias: 'Test arg takes param',
+    //demandOptions: false,
+  },
 };
 
 // matches cliOptions items with code to be executed should they be passed
 const cliExecutables: { [key: string]: any } = {
+  typescript: typescriptExecutable,
   scss: scssExecutable,
   jest: jestExecutable,
+  name: nameExecutable,
+  eslint: eslintExecutable,
+  prettier: prettierExecutable,
+  template: templateExecutable,
   param: paramExecutable,
   env: envExecutable,
 };
 
 // Executed the methods in cliExecutables if the cli args contains that flag
 const handleArguments: any = (yargsV: Record<string, unknown>) => {
-  console.log(yargsV);
   Object.entries(cliOptions).forEach(([key]) => {
     if (yargsV[key]) {
       cliExecutables[key](yargsV[key]);
