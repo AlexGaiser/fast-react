@@ -5,6 +5,7 @@
   "main": "build/src/cli.js",
   "scripts": {
     "test": "jest --coverage",
+    "ci:test": "jest",
     "ci:lint": "eslint . -c .eslintrc.json",
     "start": "tsc && node ./build/src/cli.js",
     "build": "npm unlink && tsc && npm link"
