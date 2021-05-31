@@ -51,6 +51,7 @@ const cliExecutables: { [key: string]: any } = {
 
 // Executed the methods in cliExecutables if the cli args contains that flag
 const handleArguments: any = (yargsV: Record<string, unknown>) => {
+  console.log(yargsV);
   Object.entries(cliOptions).forEach(([key]) => {
     if (yargsV[key]) {
       cliExecutables[key](yargsV[key]);
