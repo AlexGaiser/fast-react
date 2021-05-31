@@ -1,7 +1,6 @@
 #!/usr/bin/env node
+import * as yargs from 'yargs';
+import { cliOptions, handleArguments } from './cli/cliOptions';
 
-import { clone } from './services/utils.service';
-
-const args = clone(process.argv.slice(2));
-console.log('hello from fast react');
-console.log('args are', args);
+const argv = yargs.options(cliOptions).argv;
+handleArguments(argv);
