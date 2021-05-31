@@ -2,6 +2,7 @@ import {
   scssExecutable,
   jestExecutable,
   paramExecutable,
+  envExecutable,
 } from './cliFunctions';
 
 // To add support for a CLI Arg:
@@ -45,15 +46,16 @@ const cliExecutables: { [key: string]: any } = {
   scss: scssExecutable,
   jest: jestExecutable,
   param: paramExecutable,
+  env: envExecutable,
 };
 
 // Executed the methods in cliExecutables if the cli args contains that flag
 const handleArguments: any = (yargsV: Record<string, unknown>) => {
-  Object.entries(cliOptions).forEach(([key, value]) => {
+  Object.entries(cliOptions).forEach(([key]) => {
     if (yargsV[key]) {
       cliExecutables[key](yargsV[key]);
     }
   });
 };
 
-export { cliOptions, handleArguments };
+export { cliOptions, handleArguments, Environment };
